@@ -1,0 +1,11 @@
+stages:
+  - build
+build-artifact:
+  stage: build
+  tags:
+  - shell
+  script:
+  - mvn clean install
+  artifacts:
+    paths: [./target/*.jar]
+    expire_in: 1 week
